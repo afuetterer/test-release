@@ -5,9 +5,15 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html). See
 [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit guidelines.
 
-## [Unreleased](https://github.com/afuetterer/test-release/compare/0.2.2...main)
+## [Unreleased](https://github.com/afuetterer/test-release/compare/0.2.3...main)
 
 <!-- releases -->
+
+## [0.2.3](https://github.com/afuetterer/test-release/compare/0.2.2...0.2.3) (2025-02-01)
+
+### Bug Fixes
+
+- Dummy fix ([`fbfd1c4`](https://github.com/afuetterer/test-release/commit/fbfd1c464b67a6ceb1cb4694ec5f1ac3b8b0bf1e))
 
 ## [0.2.2](https://github.com/afuetterer/test-release/compare/0.2.1...0.2.2) (2025-02-01)
 
