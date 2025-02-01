@@ -56,8 +56,8 @@ https://github.com/python-semantic-release/python-semantic-release/blob/v9.17.0/
 -%}{#
 #}{%    if detailed_changes_link is defined
 %}{{      "\n"
-}}{{      "**Full Changelog**: %s" | format(detailed_changes_link)
-}}{{      "\n"
+}}{{      "**Full Changelog**: (%s)" | format(detailed_changes_link)
+}}{{      "\n\n"
 }}{%    endif
 %}{%  endif
 %}{%  include ".components/release_notes_footer.md.j2"
