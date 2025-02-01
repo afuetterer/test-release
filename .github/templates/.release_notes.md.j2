@@ -42,7 +42,7 @@ https://github.com/python-semantic-release/python-semantic-release/blob/v9.17.0/
 %}{%    set prev_version_tag = releases[prev_release_index].version.as_tag()
 %}{%    set new_version_tag = release.version.as_tag()
 %}{%    set version_compare_url = prev_version_tag | compare_url(new_version_tag)
-%}{%    set detailed_changes_link = '[{}...{}]({})'.format(
+%}{%    set detailed_changes_link = '[`{}...{}`]({})'.format(
           prev_version_tag, new_version_tag, version_compare_url
         )
 %}{%  endif
