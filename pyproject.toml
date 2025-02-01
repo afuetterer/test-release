@@ -43,7 +43,7 @@ dynamic = [
   "version",
 ]
 dependencies = [
-  "httpx<0.28",
+  "httpx<0.29",
   "python-semantic-release>=9.17", # TODO
   "xsdata>=24.5",
 ]
