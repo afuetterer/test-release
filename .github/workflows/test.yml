@@ -30,38 +30,3 @@ jobs:
       run: hatch run cov
       env:
         TERM: dumb # keep rich from printing escape sequences, which made testing CLI outputs messy
-  dev-setup:
-    # Ref: structlog (MIT License) <https://github.com/hynek/structlog/blob/main/.github/workflows/ci.yml>
-    name: Install [dev] on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    steps:
-    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-    - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
-      with:
-        python-version: '3.13'
-        cache: pip
-    - run: python -Im pip install --editable .[dev]
-    - run: python -Ic 'import re3data; print(re3data.__version__)'
-    - run: re3data --version
-    - name: Set up pipdeptree
-      if: matrix.os == 'ubuntu-latest'
-      run: python -m pip install --require-hashes --requirement=requirements/ci
-    - name: Write info to step summary
-      if: matrix.os == 'ubuntu-latest'
-      run: |
-        {
-          echo -e "### ✓ All dependencies installed successfully\n\n"
-          echo '<details><summary>Installed Python packages (dependency tree)</summary>'
-          echo -e "\n\`\`\`console"
-          echo "$ uv pip tree --package=python-re3data"
-          uv pip tree --package=python-re3data
-          echo -e "\`\`\`\n</details>"
-          echo '<details><summary>Outdated Python packages</summary>'
-          echo -e "\n\`\`\`console"
-          echo "$ python -m pip list --outdated"
-          python -m pip list --outdated
-          echo -e "\`\`\`\n</details>"
-        } >> $GITHUB_STEP_SUMMARY
