@@ -16,17 +16,12 @@ env:
   FORCE_COLOR: 1
 
 jobs:
-  test:
-    uses: ./.github/workflows/test.yml
-    secrets: inherit
   release:
     # disables this workflow from running in a repository that is not part of the indicated organization/user
     if: github.repository_owner == 'afuetterer'
     runs-on: ubuntu-24.04
     permissions:
       contents: read
-    needs:
-    - test
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       with:
