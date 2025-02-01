@@ -1,0 +1,91 @@
+# mkdocs
+# Ref: https://www.mkdocs.org/user-guide/configuration/
+# ------------------------------------------------------------------------------
+
+site_name: python-re3data
+site_description: The Pythonic client for the re3data API.
+site_url: https://afuetterer.github.io/python-re3data/
+repo_name: afuetterer/python-re3data
+repo_url: https://github.com/afuetterer/python-re3data
+docs_dir: src
+edit_uri: edit/main/docs/
+strict: true
+watch:
+- ../src
+
+nav:
+- Home: index.md
+- Features: features.md
+- Getting Started:
+  - Installation: install.md
+- Reference:
+  - API Reference: api.md
+  - Resources: resources.md
+  - Exceptions: exceptions.md
+  - Command Line Interface: cli.md
+- Meta:
+  - Contributor Guide: contributing.md
+  - Changelog: changelog.md
+  - License: license.md
+
+theme:
+  name: material
+  custom_dir: src/overrides
+  features:
+  - content.action.edit
+  - content.action.view
+  - content.code.annotate
+  - content.code.copy
+  - navigation.footer
+  palette:
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+
+plugins:
+- search
+- include-markdown
+- mkdocstrings:
+    default_handler: python
+    handlers:
+      python:
+        paths:
+        - ../src
+        options:
+          show_root_heading: false
+          show_root_toc_entry: false
+        import:
+        - https://docs.python.org/3/objects.inv
+- minify:
+    minify_html: true
+
+markdown_extensions:
+- admonition
+- footnotes
+- pymdownx.highlight:
+    anchor_linenums: true
+    line_spans: __span
+    use_pygments: true
+    pygments_lang_class: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- pymdownx.superfences
+- pymdownx.tasklist:
+    custom_checkbox: true
+- toc:
+    permalink: true
+
+extra:
+  version:
+    provider: mike
+    alias: true
+
+extra_css:
+- css/extra.css

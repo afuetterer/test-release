@@ -1,0 +1,12 @@
+## Installation
+
+You can install this version via pip from [PyPI](https://pypi.org/project/{{ ctx.repo_name }}/{{ version }}/):
+
+```console
+python -m pip install {{ ctx.repo_name }}=={{ version }}
+```
+or pull the Docker image from [GHCR](https://github.com/{{ ctx.repo_owner }}/{{ ctx.repo_name }}/pkgs/container/{{ ctx.repo_name }}):
+
+```console
+docker pull ghcr.io/{{ ctx.repo_owner }}/{{ ctx.repo_name }}:{{ version }}
+```

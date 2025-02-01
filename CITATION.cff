@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use python-re3data, please cite it as below."
+type: software
+authors:
+- family-names: Fütterer
+  given-names: Heinz-Alexander
+  orcid: https://orcid.org/0000-0003-4397-027X
+title: python-re3data
+license: MIT
+license-url: https://github.com/afuetterer/python-re3data/blob/main/LICENSE
+repository-code: https://github.com/afuetterer/python-re3data
+keywords:
+- api
+- api-client
+- metadata
+- re3data
+- repositories
+- research data
+identifiers:
+- description: This is the collection of archived snapshots of all versions of python-re3data
+  type: doi
+  value: 10.5281/zenodo.11264510
+version: 0.10.0
+date-released: 2024-12-11
